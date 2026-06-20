@@ -1,0 +1,21 @@
+{
+  "name": "learning-frontend-typescript",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "check": "pnpm -r --if-present check",
+    "dev": "pnpm --filter react-notes dev",
+    "dev:color": "pnpm --filter react-color-lab dev",
+    "dev:notes": "pnpm --filter react-notes dev",
+    "format": "pnpm -r --if-present format",
+    "lint": "pnpm -r --if-present lint",
+    "test": "pnpm -r --if-present test"
+  },
+  "devDependencies": {
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  }
+}
