@@ -99,7 +99,7 @@ docs/
 ## What Belongs Elsewhere
 
 - backend API implementation belongs in `learning-backend-ddd`
-- P2P protocol mechanics belong in `learning-networking-protocols`
+- browser-side P2P/WebRTC experiments belong here; deeper protocol mechanics belong in `learning-platform-engineering`
 - deployment, reverse proxy, and WebTransport server notes belong in `learning-platform-engineering`
 - AI model calls and credentials belong in `learning-ai-python`
 
