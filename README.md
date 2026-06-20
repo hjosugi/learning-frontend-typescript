@@ -10,6 +10,7 @@ Start with a no-build browser project before adding framework complexity:
 
 ```bash
 python3 -m http.server 5173 --directory projects/browser-state-lab
+node projects/browser-state-lab/state-core.test.mjs
 ```
 
 Open `http://localhost:5173`.

@@ -16,10 +16,15 @@ Open:
 http://localhost:5173
 ```
 
+## Unit Test
+
+```bash
+node projects/browser-state-lab/state-core.test.mjs
+```
+
 ## What To Change
 
 1. Add a new priority option.
 2. Persist the selected filter in `localStorage`.
 3. Add a second derived metric.
 4. Replace the fake local data boundary with a real API call.
-

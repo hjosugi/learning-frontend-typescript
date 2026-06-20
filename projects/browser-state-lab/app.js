@@ -1,9 +1,11 @@
+import { createTask, escapeHtml, filterTasks, summarize, toggleTask } from "./state-core.mjs";
+
 const storageKey = "browser-state-lab:tasks";
 
 const initialTasks = [
-  { id: crypto.randomUUID(), title: "Map state ownership", priority: "high", done: false },
-  { id: crypto.randomUUID(), title: "Add an accessible filter", priority: "normal", done: true },
-  { id: crypto.randomUUID(), title: "Write one lesson note", priority: "low", done: false },
+  createTask({ id: crypto.randomUUID(), title: "Map state ownership", priority: "high" }),
+  createTask({ id: crypto.randomUUID(), title: "Add an accessible filter", priority: "normal", done: true }),
+  createTask({ id: crypto.randomUUID(), title: "Write one lesson note", priority: "low" }),
 ];
 
 const state = {
@@ -26,12 +28,11 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  state.tasks.unshift({
+  state.tasks.unshift(createTask({
     id: crypto.randomUUID(),
     title,
     priority: priorityInput.value,
-    done: false,
-  });
+  }));
   titleInput.value = "";
   persist();
   render();
@@ -48,10 +49,7 @@ taskList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-action='toggle']");
   if (!button) return;
 
-  const task = state.tasks.find((item) => item.id === button.dataset.id);
-  if (!task) return;
-
-  task.done = !task.done;
+  state.tasks = toggleTask(state.tasks, button.dataset.id);
   persist();
   render();
 });
@@ -75,19 +73,16 @@ function persist() {
 }
 
 function getVisibleTasks() {
-  if (state.filter === "open") return state.tasks.filter((task) => !task.done);
-  if (state.filter === "done") return state.tasks.filter((task) => task.done);
-  return state.tasks;
+  return filterTasks(state.tasks, state.filter);
 }
 
 function render() {
   const visibleTasks = getVisibleTasks();
+  const summary = summarize(state.tasks);
 
-  document.querySelector("#total-count").textContent = String(state.tasks.length);
-  document.querySelector("#open-count").textContent = String(state.tasks.filter((task) => !task.done).length);
-  document.querySelector("#high-count").textContent = String(
-    state.tasks.filter((task) => task.priority === "high").length,
-  );
+  document.querySelector("#total-count").textContent = String(summary.total);
+  document.querySelector("#open-count").textContent = String(summary.open);
+  document.querySelector("#high-count").textContent = String(summary.high);
 
   filterButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.filter === state.filter);
@@ -108,9 +103,7 @@ function render() {
         </button>
       `;
       item.querySelector("input").addEventListener("change", () => {
-        state.tasks = state.tasks.map((current) =>
-          current.id === task.id ? { ...current, done: !current.done } : current,
-        );
+        state.tasks = toggleTask(state.tasks, task.id);
         persist();
         render();
       });
@@ -118,17 +111,3 @@ function render() {
     }),
   );
 }
-
-function escapeHtml(value) {
-  return value.replace(/[&<>"']/g, (char) => {
-    const entities = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#039;",
-    };
-    return entities[char];
-  });
-}
-
