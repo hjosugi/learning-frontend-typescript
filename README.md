@@ -17,6 +17,28 @@ Last verified: 2026-06-20
 
 Node 26 is current, but this repo uses Node 24 LTS as the default so examples stay stable for learners.
 
+## What This Repo Teaches
+
+This repo is for product-facing frontend engineering, not just framework samples.
+
+The examples should make these tradeoffs visible:
+
+- when state should be local, derived, URL-based, or server-backed
+- how form state, validation, pending UI, optimistic updates, and error recovery fit together
+- how TypeScript models protect API and UI boundaries
+- how accessibility and responsive behavior are verified, not guessed
+- how browser APIs such as media, storage, fetch, and real-time transports affect app design
+
+## How To Study It
+
+Start with one app at a time and read the README before the source code:
+
+1. run the app
+2. identify the state model and API boundary
+3. change one behavior
+4. add or update a test/check
+5. write the lesson note while the tradeoff is still fresh
+
 ## Source Repositories
 
 This learning repo absorbs the non-fork frontend and TypeScript setup repositories:
@@ -67,6 +89,20 @@ docs/
 8. Browser networking boundaries
 9. Browser API boundaries and YouTube API handling
 
+## What Belongs Here
+
+- UI applications and browser-facing TypeScript
+- React, Svelte, Nuxt, HTML/CSS, and Vite examples
+- browser API usage from the client side
+- frontend accessibility, performance, and state-management notes
+
+## What Belongs Elsewhere
+
+- backend API implementation belongs in `learning-backend-ddd`
+- P2P protocol mechanics belong in `learning-networking-protocols`
+- deployment, reverse proxy, and WebTransport server notes belong in `learning-platform-engineering`
+- AI model calls and credentials belong in `learning-ai-python`
+
 ## 2026 Learning Items
 
 See [docs/2026-learning-items.md](docs/2026-learning-items.md).
@@ -78,6 +114,14 @@ Main additions:
 - strict TypeScript API boundary models
 - accessibility, responsive states, and performance basics
 - Svelte 5 and Nuxt 4 comparison lessons
+
+## First Milestones
+
+1. Keep `react-notes` and `react-color-lab` building on the current baseline.
+2. Move `react-sandbox-h` into `apps/react-recipes`.
+3. Move `refine-search` into `apps/refine-search` and document data-provider boundaries.
+4. Move `svelte-sandbox` and `nuxt3-form` into focused lessons instead of broad sandboxes.
+5. Curate `html-css` into layout, responsive, animation, and form lessons.
 
 ## Standard Lesson Shape
 
