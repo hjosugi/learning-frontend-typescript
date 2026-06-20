@@ -52,6 +52,7 @@ appendix/
 docs/
   migration-map.md
   2026-learning-items.md
+  browser-networking.md
 ```
 
 ## Learning Path
@@ -63,7 +64,8 @@ docs/
 5. React app structure with search and filtering
 6. Svelte 5 runes and component composition
 7. Nuxt 4 form handling
-8. Browser API boundaries and YouTube API handling
+8. Browser networking boundaries
+9. Browser API boundaries and YouTube API handling
 
 ## 2026 Learning Items
 

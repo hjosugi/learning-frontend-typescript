@@ -55,6 +55,20 @@ Projects:
 - Add one screenshot per runnable app under `docs/images`.
 - Add accessibility notes to each app README.
 
+### Browser networking
+
+- fetch and typed response boundaries
+- Server-Sent Events
+- WebSocket
+- WebTransport client capability detection
+- fallback UI for unsupported transports
+- token handling boundaries
+
+Projects:
+
+- Add `docs/browser-networking.md`.
+- Add `apps/realtime-client` after the platform WebTransport server example exists.
+
 ### Framework comparison
 
 - React client app
@@ -80,4 +94,4 @@ Projects:
 2. Add React 19 form Actions exercise.
 3. Add screenshots for migrated apps.
 4. Start `apps/svelte-product-page`.
-
+5. Add browser networking notes for WebSocket/SSE/WebTransport.

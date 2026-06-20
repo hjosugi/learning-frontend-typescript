@@ -37,8 +37,9 @@ Engineers who want modern frontend examples that are small enough to read and co
 1. Keep `react-notes` and `react-color-lab` building on React 19.
 2. Add `react-recipes` from `react-sandbox-h`.
 3. Add `refine-search` as a search/filter lesson.
-4. Add Svelte and Nuxt lessons after React examples are stable.
-5. Add screenshots for each app.
+4. Add browser networking notes for WebSocket/SSE/WebTransport.
+5. Add Svelte and Nuxt lessons after React examples are stable.
+6. Add screenshots for each app.
 
 ## Public Safety Checklist
 
