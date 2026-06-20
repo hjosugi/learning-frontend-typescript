@@ -2,7 +2,15 @@
 
 React, Svelte, Nuxt, HTML/CSS, and browser-facing TypeScript examples consolidated for learning.
 
-Last verified: 2026-06-20
+Last verified: 2026-06-21
+
+## Development Environment
+
+If Node.js, pnpm, or Python are missing locally, enter the Nix shell:
+
+```bash
+nix develop
+```
 
 ## Runnable Starter Project
 
@@ -14,6 +22,24 @@ node projects/browser-state-lab/state-core.test.mjs
 ```
 
 Open `http://localhost:5173`.
+
+## Target Hands-On Projects
+
+React + Vite + TypeScript:
+
+```bash
+pnpm --filter react-notes dev
+pnpm --filter react-notes build
+```
+
+React collection/state practice:
+
+```bash
+pnpm --filter react-color-lab dev
+pnpm --filter react-color-lab build
+```
+
+The browser state lab is the dependency-light warmup; the React apps are the actual framework hands-on.
 
 ## Runtime Baseline
 
