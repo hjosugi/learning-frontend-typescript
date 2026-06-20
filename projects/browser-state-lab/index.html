@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Browser State Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">Frontend learning project</p>
+        <h1>Browser State Lab</h1>
+      </header>
+
+      <section class="toolbar" aria-label="Task controls">
+        <form id="task-form" class="form">
+          <label>
+            Task
+            <input id="task-title" name="title" required minlength="3" placeholder="Review optimistic UI notes" />
+          </label>
+          <label>
+            Priority
+            <select id="task-priority" name="priority">
+              <option value="high">High</option>
+              <option value="normal" selected>Normal</option>
+              <option value="low">Low</option>
+            </select>
+          </label>
+          <button type="submit">Add</button>
+        </form>
+
+        <div class="filters" role="group" aria-label="Task filter">
+          <button data-filter="all" class="active" type="button">All</button>
+          <button data-filter="open" type="button">Open</button>
+          <button data-filter="done" type="button">Done</button>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Derived state">
+        <div>
+          <span id="total-count">0</span>
+          <small>Total</small>
+        </div>
+        <div>
+          <span id="open-count">0</span>
+          <small>Open</small>
+        </div>
+        <div>
+          <span id="high-count">0</span>
+          <small>High priority</small>
+        </div>
+      </section>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
+

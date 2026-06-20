@@ -4,6 +4,16 @@ React, Svelte, Nuxt, HTML/CSS, and browser-facing TypeScript examples consolidat
 
 Last verified: 2026-06-20
 
+## Runnable Starter Project
+
+Start with a no-build browser project before adding framework complexity:
+
+```bash
+python3 -m http.server 5173 --directory projects/browser-state-lab
+```
+
+Open `http://localhost:5173`.
+
 ## Runtime Baseline
 
 - Node.js: 24 LTS for normal learning work
